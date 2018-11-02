@@ -1,12 +1,15 @@
-extends "res://scripts/ColoredEntity.gd"
+extends RigidBody2D
 
-var target: Vector2
+const SPEED: float = 5.0
 
 func _ready():
-	self.set_random_color()
+	self.gravity_scale = 0.0
+	# TODO set random color
+	#self.set_random_color()
 
-func _process(delta):
-	pass
+func shoot(at: Vector2) -> void:
+	var direction = (at - self.global_position)
+	self.linear_velocity = at * SPEED
 
-func shoot(target: Vector2) -> void:
-	self.target = target
+func _on_VisibilityNotifier2D_screen_exited():
+	self.queue_free()

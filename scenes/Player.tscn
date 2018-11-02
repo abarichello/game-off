@@ -35,5 +35,3 @@ motion/sync_to_physics = false
 position = Vector2( -10.9462, -24.9931 )
 shape = SubResource( 1 )
 
-[node name="Projectiles" type="Node" parent="."]
-

@@ -22,3 +22,11 @@ size_flags_vertical = 1
 color = Color( 1, 1, 1, 1 )
 _sections_unfolded = [ "Anchor", "Rect" ]
 
+[node name="BallSpawn" type="Position2D" parent="Sprite"]
+position = Vector2( 292.338, 17.1711 )
+
+[node name="CannonBase" type="Position2D" parent="Sprite"]
+position = Vector2( 1.38988, 17.6051 )
+
+[node name="Projectiles" type="Node" parent="."]
+

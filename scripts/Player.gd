@@ -15,4 +15,4 @@ func swap_nodes_color() -> void:
 		node.swap_color()
 
 func shoot_bullet() -> void:
-	pass
+	$Cannon.shoot()
