@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://resources/img/cat0.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Cannon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://resources/img/cat0.png" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 150.97
+height = 150.685
 
 [node name="Player" type="Node2D" groups=[
 "ColoredEntity",
@@ -9,7 +16,24 @@
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
+[node name="Cannon" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1.16626, -18.6616 )
+
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index", "texture" ]
+
+[node name="Body" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+motion/sync_to_physics = false
+
+[node name="Collision" type="CollisionShape2D" parent="Body"]
+position = Vector2( -10.9462, -24.9931 )
+shape = SubResource( 1 )
+
+[node name="Projectiles" type="Node" parent="."]
 

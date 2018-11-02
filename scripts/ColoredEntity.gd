@@ -1,3 +1,5 @@
+# Class with common color switch operations.
+# Add to the group ColoredEntity if its color is not fixed and gets swapped with player input.
 extends Node2D
 
 var current_color: Color

@@ -2,12 +2,3 @@ extends Node2D
 
 func _ready():
 	pass
-
-func _input(event):
-	if Input.is_action_just_pressed("swap"):
-		self.swap_nodes_color()
-
-func swap_nodes_color() -> void:
-	var nodes: Array = self.get_tree().get_nodes_in_group("ColoredEntity")
-	for node in nodes:
-		node.swap_color()
