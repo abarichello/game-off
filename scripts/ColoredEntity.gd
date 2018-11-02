@@ -1,22 +1,28 @@
 extends Node2D
 
-var current_color: Color = GLOBAL.HIGHLIGHT
+var current_color: Color
 
 func _ready():
-	self.update_color()
+	pass
 
 func update_color() -> void:
 	self.modulate = self.current_color
 
 func swap_color() -> void:
 	if current_color == GLOBAL.LOWLIGHT:
-		current_color = GLOBAL.HIGHLIGHT
+		self.highlight()
 	else:
-		current_color = GLOBAL.LOWLIGHT
+		self.lowlight()
+
+func highlight():
+	current_color = GLOBAL.HIGHLIGHT
+	self.update_color()
+
+func lowlight():
+	current_color = GLOBAL.LOWLIGHT
 	self.update_color()
 
 func set_random_color() -> void:
 	randomize()
 	if randi() % 2 == 0:
 		self.swap_color()
-		self.update_color()
