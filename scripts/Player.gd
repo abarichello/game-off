@@ -7,7 +7,7 @@ func _ready():
 func _input(event):
 	if Input.is_action_just_pressed("swap"):
 		self.swap_nodes_color()
-	if Input.is_action_just_pressed("fire"):
+	if Input.is_action_pressed("fire"):
 		self.shoot_bullet()
 
 func swap_nodes_color() -> void:

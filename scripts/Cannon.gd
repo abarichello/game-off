@@ -1,6 +1,6 @@
 extends "res://scripts/ColoredEntity.gd"
 
-onready var Bullet = preload("res://scenes/Projectile.tscn")
+onready var Bullet: PackedScene = preload("res://scenes/Projectile.tscn")
 const RATE_OF_CHANGE: float = 0.5
 const UPPER_LIMIT: int = -85
 const LOWER_LIMIT: int = -10
@@ -34,7 +34,13 @@ func shoot() -> void:
 		NewBullet.rotation_degrees = self.angle
 		var at: Vector2 = $Sprite/CannonTip.global_position - $Sprite/CannonBase.global_position
 		NewBullet.shoot(at)
-		NewBullet.get_node("Sprite").color = self.current_color
+
+		var BulletSprite = NewBullet.get_node("Mask")
+		if self.highlighted:
+			BulletSprite.highlight()
+		else:
+			BulletSprite.lowlight()
+
 		$Projectiles.add_child(NewBullet)
 		$FireCooldown.start()
 
