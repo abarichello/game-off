@@ -28,9 +28,17 @@ func move_down():
 	self.angle += RATE_OF_CHANGE
 
 func shoot() -> void:
-	var NewBullet = Bullet.instance()
-	NewBullet.global_position = $Sprite/BallSpawn.global_position
-	NewBullet.rotation_degrees = self.angle
-	var at: Vector2 = $Sprite/BallSpawn.global_position - $Sprite/CannonBase.global_position
-	NewBullet.shoot(at)
-	$Projectiles.add_child(NewBullet)
+	if $FireCooldown.time_left == 0:
+		var NewBullet = Bullet.instance()
+		NewBullet.global_position = $Sprite/CannonTip.global_position
+		NewBullet.rotation_degrees = self.angle
+		var at: Vector2 = $Sprite/CannonTip.global_position - $Sprite/CannonBase.global_position
+		NewBullet.shoot(at)
+		NewBullet.get_node("Sprite").color = self.current_color
+		$Projectiles.add_child(NewBullet)
+		$FireCooldown.start()
+
+# --- Signals ---
+
+func _on_FireCooldown_timeout():
+	pass # Replace with function body.

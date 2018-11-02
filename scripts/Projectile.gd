@@ -4,8 +4,6 @@ const SPEED: float = 5.0
 
 func _ready():
 	self.gravity_scale = 0.0
-	# TODO set random color
-	#self.set_random_color()
 
 func shoot(at: Vector2) -> void:
 	var direction = (at - self.global_position)
