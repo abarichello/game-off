@@ -16,7 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="gameoff"
+run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GLOBAL="*res://scripts/GLOBAL.gd"
 
 [display]
 

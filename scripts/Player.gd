@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://scripts/ColoredEntity.gd"
 
 func _ready():
-    pass
+	self.set_random_color()
