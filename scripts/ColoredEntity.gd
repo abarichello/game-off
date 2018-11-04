@@ -2,8 +2,11 @@
 # Add to the group ColoredEntity if its color is not fixed and gets swapped with player input.
 extends Node2D
 
-var current_color: Color
+var current_color: Color = GLOBAL.LOWLIGHT
 var highlighted: bool = false
+
+func _ready():
+	self.update_color()
 
 func update_color() -> void:
 	self.modulate = self.current_color

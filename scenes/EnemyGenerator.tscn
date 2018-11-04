@@ -6,17 +6,19 @@
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1106.09, -138.804, 0, 0, 0, 0, 1345.19, -8.7059, 0, 0, 0, 0, 1920.09, 0.0845642, 0, 0, 0, 0, 1923.6, 515.204, 0, 0, 0, 0, 2160.94, 694.529, 0, 0, 0, 0, 2171.49, -142.321, 0, 0, 0, 0, 1106.09, -138.804 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1106.09, -138.804, 0, 0, 0, 0, 1331.19, -2.99731, 0, 0, 0, 0, 1928.21, -5.56401, 0, 0, 0, 0, 1927.69, 514.965, 0, 0, 0, 0, 2173.07, 494.431, 0, 0, 0, 0, 2171.49, -142.321, 0, 0, 0, 0, 1106.09, -138.804 )
 }
 
 [node name="EnemyGenerator" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="Enemies" type="Node" parent="."]
+
 [node name="SpawnArea" type="Path2D" parent="."]
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 1 )
 
-[node name="PathFollow2D" type="PathFollow2D" parent="SpawnArea"]
+[node name="SpawnLocation" type="PathFollow2D" parent="SpawnArea"]
 position = Vector2( 1106.09, -138.804 )
 rotation = 0.498283
 offset = 0.0
@@ -27,3 +29,10 @@ cubic_interp = true
 loop = true
 lookahead = 4.0
 
+[node name="SpawnTimer" type="Timer" parent="."]
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

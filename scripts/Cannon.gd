@@ -3,7 +3,7 @@ extends "res://scripts/ColoredEntity.gd"
 onready var Bullet: PackedScene = preload("res://scenes/Projectile.tscn")
 const RATE_OF_CHANGE: float = 0.5
 const UPPER_LIMIT: int = -85
-const LOWER_LIMIT: int = -10
+const LOWER_LIMIT: int = -5
 
 var angle = -45
 
@@ -41,6 +41,8 @@ func shoot() -> void:
 		else:
 			BulletSprite.lowlight()
 
+		NewBullet.setup(GLOBAL.BULLET, GLOBAL.BULLET_SPEED)
+		NewBullet.update_collision_layer()
 		$Projectiles.add_child(NewBullet)
 		$FireCooldown.start()
 

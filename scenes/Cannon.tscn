@@ -22,7 +22,6 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 1, 1, 1, 1 )
-_sections_unfolded = [ "Anchor", "Rect" ]
 
 [node name="CannonTip" type="Position2D" parent="Sprite"]
 position = Vector2( 292.338, 17.1711 )
@@ -37,6 +36,5 @@ process_mode = 1
 wait_time = 1.0
 one_shot = true
 autostart = true
-_sections_unfolded = [ "Pause", "Script" ]
 
 [connection signal="timeout" from="FireCooldown" to="." method="_on_FireCooldown_timeout"]
