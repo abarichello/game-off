@@ -5,10 +5,7 @@ const RATE_OF_CHANGE: float = 0.5
 const UPPER_LIMIT: int = -85
 const LOWER_LIMIT: int = -5
 
-var angle = -45
-
-func _ready():
-	pass
+var angle: float = -45.0
 
 func _process(delta):
 	$Sprite.set_rotation(deg2rad(self.angle))
@@ -49,4 +46,4 @@ func shoot() -> void:
 # --- Signals ---
 
 func _on_FireCooldown_timeout():
-	pass # Replace with function body.
+	pass
