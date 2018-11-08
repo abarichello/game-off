@@ -13,7 +13,6 @@ func _ready():
 	self.friction = 0
 	self.contact_monitor = true
 	self.contacts_reported = 1
-	#$ExplosionArea/ExplosionShape.disabled = true
 
 func setup(sprite_type: int, speed: float) -> void:
 	self.sprite_type = sprite_type
@@ -53,7 +52,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 func _on_Projectile_body_entered(body: PhysicsBody2D):
 	if armed:
 		for missile in bodies_in_area:
-			print(missile)
 			missile.queue_free()
 		self.queue_free()
 
