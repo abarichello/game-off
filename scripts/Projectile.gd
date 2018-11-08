@@ -29,6 +29,10 @@ func shoot(at: Vector2) -> void:
 	var direction = (at - self.global_position)
 	self.linear_velocity = at * speed
 
+func shoot_missile(at: Vector2) -> void:
+	var direction = (at - self.global_position)
+	self.add_central_force(at)
+
 func set_random_color() -> void:
 	$Mask.set_random_color()
 

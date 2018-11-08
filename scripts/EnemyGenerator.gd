@@ -22,7 +22,7 @@ func spawn_and_shoot_enemy() -> void:
 	var _rotation: int = -275
 	var direction: Vector2 = (Vector2(0, 1080) - Duplicate.global_position) / 100
 	Duplicate.rotation = deg2rad(_rotation)
-	Duplicate.shoot(direction)
+	Duplicate.shoot_missile(direction)
 
 # --- Signals ---
 
