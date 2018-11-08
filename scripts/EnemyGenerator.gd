@@ -19,9 +19,10 @@ func spawn_and_shoot_enemy() -> void:
 
 	$SpawnArea/SpawnLocation.set_offset(randi())
 	Duplicate.global_position = $SpawnArea/SpawnLocation.position
-	var _rotation: int = -275
-	var direction: Vector2 = (Vector2(0, 1080) - Duplicate.global_position) / 100
-	Duplicate.rotation = deg2rad(_rotation)
+
+	var direction: Vector2 = (Vector2(0, 1080) - Duplicate.global_position).normalized()
+	var angle: float = Vector2(1, 0).angle_to(direction)
+	Duplicate.rotation = angle
 	Duplicate.shoot_missile(direction)
 
 # --- Signals ---
