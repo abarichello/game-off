@@ -14,14 +14,13 @@ height = 150.685
 "ColoredEntity",
 ]]
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Cannon" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1.16626, -18.6616 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index", "texture" ]
 
 [node name="Body" type="KinematicBody2D" parent="."]
 editor/display_folded = true
