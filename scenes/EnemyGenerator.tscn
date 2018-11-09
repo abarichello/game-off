@@ -6,7 +6,7 @@
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 944.777, -156.574, 0, 0, 0, 0, 1055.55, -32.7692, 0, 0, 0, 0, 1955.58, -35.2126, 0, 0, 0, 0, 1938.1, 128.1, 0, 0, 0, 0, 2169.16, 131.121, 0, 0, 0, 0, 2171.96, -161.2, 0, 0, 0, 0, 1329.54, -162.398, 0, 0, 0, 0, 958.623, -161.461, 0, 0, 0, 0, 944.777, -156.574 )
+"points": PoolVector2Array( 0, 0, 0, 0, 944.777, -156.574, 0, 0, 0, 0, 1055.55, -32.7692, 0, 0, 0, 0, 1955.58, -35.2126, 0, 0, 0, 0, 1970.03, -7.73285, 0, 0, 0, 0, 2153.68, -25.4177, 0, 0, 0, 0, 2171.96, -161.2, 0, 0, 0, 0, 1329.54, -162.398, 0, 0, 0, 0, 958.623, -161.461, 0, 0, 0, 0, 944.777, -156.574 )
 }
 
 [node name="EnemyGenerator" type="Node2D"]
@@ -20,7 +20,7 @@ curve = SubResource( 1 )
 
 [node name="SpawnLocation" type="PathFollow2D" parent="SpawnArea"]
 position = Vector2( 944.777, -156.574 )
-rotation = 0.840899
+rotation = 0.840875
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -31,7 +31,7 @@ lookahead = 4.0
 
 [node name="SpawnTimer" type="Timer" parent="."]
 process_mode = 1
-wait_time = 1.0
+wait_time = 1.5
 one_shot = false
 autostart = true
 
