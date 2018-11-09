@@ -9,6 +9,7 @@ var angle: float = -45.0
 
 func _process(delta):
 	$Sprite.set_rotation(deg2rad(self.angle))
+	$Sprite.rect_size.y = 24
 
 func _input(event):
 	if Input.is_action_pressed("ui_up"):
