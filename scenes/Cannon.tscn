@@ -26,11 +26,23 @@ size_flags_vertical = 0
 texture = ExtResource( 2 )
 stretch_mode = 2
 
+[node name="GuideLine" type="Line2D" parent="Sprite"]
+modulate = Color( 1, 1, 1, 0.1 )
+show_behind_parent = true
+position = Vector2( 0, 10 )
+points = PoolVector2Array( 135, 2, 2000, 2 )
+width = 5.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1
+joint_mode = 2
+sharp_limit = 2.0
+round_precision = 10
+
 [node name="CannonTip" type="Position2D" parent="Sprite"]
-position = Vector2( 138.359, 10.088 )
+position = Vector2( 135, 12 )
 
 [node name="CannonBase" type="Position2D" parent="Sprite"]
-position = Vector2( 0.316684, 10.0927 )
+position = Vector2( 0, 12 )
 
 [node name="Projectiles" type="Node" parent="."]
 

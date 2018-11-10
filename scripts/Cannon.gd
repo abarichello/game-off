@@ -1,7 +1,7 @@
 extends "res://scripts/ColoredEntity.gd"
 
 onready var Bullet: PackedScene = preload("res://scenes/Projectile.tscn")
-const RATE_OF_CHANGE: float = 1.0
+const RATE_OF_CHANGE: float = 0.9
 const UPPER_LIMIT: int = -85
 const LOWER_LIMIT: int = -5
 
