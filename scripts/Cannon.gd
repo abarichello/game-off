@@ -2,10 +2,13 @@ extends "res://scripts/ColoredEntity.gd"
 
 onready var Bullet: PackedScene = preload("res://scenes/Projectile.tscn")
 const RATE_OF_CHANGE: float = 0.9
-const UPPER_LIMIT: int = -85
+const UPPER_LIMIT: int = -89
 const LOWER_LIMIT: int = -5
 
 var angle: float = -45.0
+
+func _ready():
+	self.highlight()
 
 func _process(delta):
 	$Sprite.set_rotation(deg2rad(self.angle))
@@ -19,10 +22,10 @@ func _input(event):
 		if self.angle < LOWER_LIMIT:
 			self.move_down()
 
-func move_up():
+func move_up() -> void:
 	self.angle -= RATE_OF_CHANGE
 
-func move_down():
+func move_down() -> void:
 	self.angle += RATE_OF_CHANGE
 
 func shoot() -> void:
@@ -43,8 +46,3 @@ func shoot() -> void:
 		NewBullet.update_collision_layer()
 		$Projectiles.add_child(NewBullet)
 		$FireCooldown.start()
-
-# --- Signals ---
-
-func _on_FireCooldown_timeout():
-	pass

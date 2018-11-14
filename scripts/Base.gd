@@ -4,7 +4,7 @@ const FULL_HEALTH: int = 3
 var health: int = self.FULL_HEALTH
 
 func _ready():
-	pass
+	self.highlight()
 
 func hit() -> void:
 	if health > 1:

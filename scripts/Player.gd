@@ -2,7 +2,6 @@ extends "res://scripts/ColoredEntity.gd"
 
 func _ready():
 	self.highlight()
-	$Cannon.highlight()
 
 func _input(event):
 	if Input.is_action_just_pressed("swap"):

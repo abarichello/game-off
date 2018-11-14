@@ -14,5 +14,5 @@ script = ExtResource( 1 )
 position = Vector2( 473.304, 952.639 )
 
 [node name="Base" parent="." instance=ExtResource( 4 )]
-position = Vector2( 53.8083, 928.269 )
+position = Vector2( 94.6306, 955.095 )
 
