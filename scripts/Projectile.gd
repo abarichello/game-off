@@ -1,6 +1,5 @@
 extends RigidBody2D
 
-const MISSILE_FORCE_OFFSET: Vector2 = Vector2(-25, 0)
 var MissileSprite: Texture = load("res://resources/img/missile-placeholder.png")
 var BulletSprite: Texture = load("res://resources/img/bullet-placeholder.png")
 
@@ -32,7 +31,7 @@ func shoot(at: Vector2) -> void:
 
 func shoot_missile(at: Vector2) -> void:
 	var direction = (at - self.global_position)
-	self.add_force(MISSILE_FORCE_OFFSET, at * GLOBAL.MISSILE_SPEED["max"])
+	self.add_central_force(at * GLOBAL.MISSILE_SPEED["max"])
 
 func set_random_color() -> void:
 	$Mask.set_random_color()
