@@ -39,7 +39,7 @@ sharp_limit = 2.0
 round_precision = 10
 
 [node name="CannonTip" type="Position2D" parent="Sprite"]
-position = Vector2( 135, 12 )
+position = Vector2( 120, 12 )
 
 [node name="CannonBase" type="Position2D" parent="Sprite"]
 position = Vector2( 0, 12 )

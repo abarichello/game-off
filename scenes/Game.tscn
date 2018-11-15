@@ -11,7 +11,7 @@ script = ExtResource( 1 )
 [node name="Arena" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 473.304, 952.639 )
+position = Vector2( 456.975, 971.301 )
 
 [node name="Base" parent="." instance=ExtResource( 4 )]
 position = Vector2( 94.6306, 955.095 )
