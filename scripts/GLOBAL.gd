@@ -24,10 +24,15 @@ const LOW_COLLISION: int = 2
 const HIGH_COLLISION: int = 3
 
 func _ready():
-	self.update_global_theme(2)
+	self.update_global_theme(self.theme_index)
 
 func update_global_theme(index: int):
 	self.theme_index = index
 	self.current_theme = COLORS[theme_index]
 	self.HIGHLIGHT = self.current_theme["high"]
 	self.LOWLIGHT = self.current_theme["low"]
+
+func swap_nodes_color() -> void:
+	var nodes: Array = self.get_tree().get_nodes_in_group("ColoredEntity")
+	for node in nodes:
+		node.swap_color()
