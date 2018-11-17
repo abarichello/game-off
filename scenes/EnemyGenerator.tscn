@@ -19,8 +19,8 @@ self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 1 )
 
 [node name="SpawnLocation" type="PathFollow2D" parent="SpawnArea"]
-position = Vector2( 944.777, -156.574 )
-rotation = 0.840875
+position = Vector2( 802.371, -163.584 )
+rotation = 0.655325
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -35,4 +35,6 @@ wait_time = 1.5
 one_shot = false
 autostart = true
 
+[connection signal="start" from="." to="." method="_on_EnemyGenerator_start"]
+[connection signal="stop" from="." to="." method="_on_EnemyGenerator_stop"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

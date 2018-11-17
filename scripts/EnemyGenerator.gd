@@ -1,11 +1,14 @@
 extends Node2D
 
 onready var EnemyScene: PackedScene = preload("res://scenes/Projectile.tscn")
+signal start
+signal stop
 
 var Enemy
 
 func _ready():
 	self.setup_enemy()
+	self.emit_signal("stop")
 
 func setup_enemy() -> void:
 	self.Enemy = EnemyScene.instance()
@@ -29,3 +32,9 @@ func spawn_and_shoot_enemy() -> void:
 
 func _on_SpawnTimer_timeout():
 	self.spawn_and_shoot_enemy()
+
+func _on_EnemyGenerator_start():
+	$SpawnTimer.start()
+
+func _on_EnemyGenerator_stop():
+	$SpawnTimer.stop()
