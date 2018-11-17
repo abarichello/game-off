@@ -9,6 +9,10 @@ func _ready():
 	self.update_color()
 
 func update_color() -> void:
+	if highlighted:
+		self.current_color = GLOBAL.HIGHLIGHT
+	else:
+		self.current_color = GLOBAL.LOWLIGHT
 	self.modulate = self.current_color
 
 func swap_color() -> void:

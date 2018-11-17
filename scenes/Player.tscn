@@ -33,3 +33,4 @@ motion/sync_to_physics = false
 position = Vector2( -6.08298, -9.86302 )
 shape = SubResource( 1 )
 
+[connection signal="unblock" from="." to="." method="_on_Player_unblock"]

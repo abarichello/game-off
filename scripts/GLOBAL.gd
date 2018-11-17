@@ -31,6 +31,12 @@ func update_global_theme(index: int):
 	self.current_theme = COLORS[theme_index]
 	self.HIGHLIGHT = self.current_theme["high"]
 	self.LOWLIGHT = self.current_theme["low"]
+	self.update_colored_entities()
+
+func update_colored_entities() -> void:
+	var nodes: Array = self.get_tree().get_nodes_in_group("ColoredEntity")
+	for node in nodes:
+		node.update_color()
 
 func swap_nodes_color() -> void:
 	var nodes: Array = self.get_tree().get_nodes_in_group("ColoredEntity")
