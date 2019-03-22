@@ -1,7 +1,9 @@
 image: barichello/godot-ci:3.1
 
 variables:
-  EXPORT_NAME: gamine
+  EXPORT_NAME: gameoff
+  GIT_EMAIL: artur@barichello.me
+  GIT_USERNAME: abarichello
 
 stages:
   - export
@@ -16,7 +18,7 @@ before_script:
 linux:
   stage: export
   script:
-    - godot -v --export "Linux/X11" ./build/linux/$EXPORT_NAME.x64
+    - godot -v --export "Linux/X11" ./build/linux/$EXPORT_NAME.x86_64
   artifacts:
     name: $EXPORT_NAME-$CI_JOB_NAME
     paths:
@@ -56,10 +58,11 @@ deploy-github-pages:
     - web
   script:
     - git checkout gh-pages
+    - rm -f *.md
     - mv build/web/** .
-    - git config user.email artur@barichello.me
-    - git config user.name abarichello
+    - git config user.email $GIT_EMAIL
+    - git config user.name $GIT_USERNAME
     - git remote add github $REMOTE_URL
     - git add -A
-    - 'git commit -m "Auto: Deploy GitHub Page $EXPORT_NAME-$CI_JOB_NAME$" -m "Deploy from GitLab pipeline \#$CI_PIPELINE_ID"'
+    - 'git commit -m "ci: Deploy GitHub Page $EXPORT_NAME-$CI_JOB_NAME$" -m "Deploy from GitLab pipeline \#$CI_PIPELINE_ID"'
     - git push github gh-pages -f
